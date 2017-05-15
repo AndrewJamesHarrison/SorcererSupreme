@@ -18,7 +18,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10" Orientation="Horizontal">
+                        <StackLayout Padding="10">
                             <Label Text="{Binding Text}"
                        LineBreakMode="NoWrap"
                        Style="{DynamicResource ListItemTextStyle}"
@@ -31,6 +31,6 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-            </ListView>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
