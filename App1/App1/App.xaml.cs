@@ -23,7 +23,7 @@ namespace App1
                 {
                     new NavigationPage(new ItemsPage())
                     {
-                        Title = "Browse",
+                        Title = "Sorcery",
                         Icon = Device.OnPlatform<string>("tab_feed.png",null,null)
                     },
                     new NavigationPage(new AboutPage())

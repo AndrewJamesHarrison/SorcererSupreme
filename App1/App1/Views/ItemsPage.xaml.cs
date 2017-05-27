@@ -18,18 +18,6 @@ namespace App1.Views
 			BindingContext = viewModel = new ItemsViewModel();
 		}
 
-		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-		{
-			var item = args.SelectedItem as Item;
-			if (item == null)
-				return;
-
-			await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
-			// Manually deselect item
-			ItemsListView.SelectedItem = null;
-		}
-
 		async void AddItem_Clicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new NewItemPage());
@@ -42,5 +30,15 @@ namespace App1.Views
 			if (viewModel.Items.Count == 0)
 				viewModel.LoadItemsCommand.Execute(null);
 		}
-	}
+
+        private void ClearAll_Clicked(object sender, EventArgs e)
+        {
+            viewModel.Items.Clear();
+        }
+
+        private void CastSpell_Clicked(object sender, EventArgs e)
+        {
+            viewModel.CastSpell();
+        }
+    }
 }
