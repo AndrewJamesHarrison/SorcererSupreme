@@ -4,65 +4,67 @@
              x:Class="App1.Views.AboutPage"
              xmlns:vm="clr-namespace:App1.ViewModels;"
              Title="{Binding Title}">
-  <ContentPage.BindingContext>
-    <vm:AboutViewModel />
-  </ContentPage.BindingContext>
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-      <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-        <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-          <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64"/>
-        </ContentView>
-      </StackLayout>
-    </StackLayout>
-    <ScrollView Grid.Row="1">
-      <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-        <Label FontSize="22">
-          <Label.FormattedText>
-            <FormattedString>
-              <FormattedString.Spans>
-                <Span Text="App1" FontAttributes="Bold" FontSize="22"/>
-                <Span Text=" "/>
-                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}"/>
-              </FormattedString.Spans>
-            </FormattedString>
-          </Label.FormattedText>
-        </Label>
-        <Label>
-          <Label.FormattedText>
-            <FormattedString>
-              <FormattedString.Spans>
-                <Span Text="This app is written in C# and native APIs using the" />
-                <Span Text=" "/>
-                <Span Text="Xamarin Platform" FontAttributes="Bold" />
-                <Span Text="." />
-              </FormattedString.Spans>
-            </FormattedString>
-          </Label.FormattedText>
-        </Label>
-        <Label>
-          <Label.FormattedText>
-            <FormattedString>
-              <FormattedString.Spans>
-                <Span Text="It shares code with its" />
-                <Span Text=" "/>
-                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
-                <Span Text=" "/>
-                <Span Text="versions." />
-              </FormattedString.Spans>
-            </FormattedString>
-          </Label.FormattedText>
-        </Label>
-        <Button Margin="0,10,0,0"
-                Text="Learn more" 
-                Command="{Binding OpenWebCommand}"
-                BackgroundColor="{StaticResource Primary}"
-                TextColor="White"/>
-      </StackLayout>
-    </ScrollView>
-  </Grid>
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Margin="10,0">
+            <Label>
+                <Label.Text>
+Welcome, WIZARDS! It is I, your GAME MASTER, THE SORCERER SUPREME.
+I have gathered you all here to give you AN IMPOSSIBLE TASK.
+In order to conquer your mighty task, you will need to cast SPELLS.
+As you all know, a SPELL is made of 2 or more WORDS OF POWER.
+Longer SPELLS need more dice rolls, and as such, are more difficult than short SPELLS.
+                </Label.Text>
+            </Label>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="1" Text="Roll"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="Result"/>
+                <Label Grid.Row="0" Grid.Column="3" Text="Description"/>
+
+                <Label Grid.Row="1" Grid.Column="1" Text="1"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="Critical Failure"/>
+                <Label Grid.Row="1" Grid.Column="3" Text="When a CRITICAL FAILURE occurs, roll a D20.
+                       The result corresponds to the WORD OF POWER that REPLACES the WORD OF POWER you attempted to use."/>
+
+                <Label Grid.Row="2" Grid.Column="1" Text="2-5"/>
+                <Label Grid.Row="2" Grid.Column="2" Text="Failure"/>
+                <Label Grid.Row="2" Grid.Column="3" Text="The WORD OF POWER works PARTIALLY, or INCORRECTLY. 
+                       You get an underwhelming, or completely incorrect result."/>
+
+                <Label Grid.Row="3" Grid.Column="1" Text="6-10"/>
+                <Label Grid.Row="3" Grid.Column="2" Text="Minor Success"/>
+                <Label Grid.Row="3" Grid.Column="3" Text="The WORD OF POWER works SATISFACTORILY, but THE SORCERER SUPREME may describe the result as less than perfect."/>
+
+                <Label Grid.Row="4" Grid.Column="1" Text="11-15"/>
+                <Label Grid.Row="4" Grid.Column="2" Text="Major Success"/>
+                <Label Grid.Row="4" Grid.Column="3" Text="The WORD OF POWER works very well."/>
+
+                <Label Grid.Row="5" Grid.Column="1" Text="16-20"/>
+                <Label Grid.Row="5" Grid.Column="2" Text="Critical Success"/>
+                <Label Grid.Row="5" Grid.Column="3" Text="The WORD OF POWER works PERFECTLY as you intended. 
+                       You can describe extra benefits as the SORCERER SUPREME sees fit."/>
+            </Grid>
+        </ScrollView>
+    </Grid>
 </ContentPage>

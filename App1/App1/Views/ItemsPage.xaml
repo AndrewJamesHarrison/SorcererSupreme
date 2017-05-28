@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.Views.ItemsPage"
               Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             Style="MyTheme">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Item" Clicked="AddItem_Clicked" />
-        <ToolbarItem Text="Clear All" Clicked="ClearAll_Clicked"/>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Clear" Clicked="ClearAll_Clicked"/>
         <ToolbarItem Text="Cast!" Clicked="CastSpell_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
@@ -26,7 +27,7 @@
                             <StackLayout Padding="10">
                                 <StackLayout.Triggers>
                                     <DataTrigger TargetType="StackLayout" Binding="{Binding Replacement}" Value="True">
-                                        <Setter Property="BackgroundColor" Value="Yellow"/>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource DarkBackgroundColor}"/>
                                     </DataTrigger>
                                 </StackLayout.Triggers>
                                 <Grid>
