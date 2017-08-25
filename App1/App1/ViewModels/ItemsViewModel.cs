@@ -8,6 +8,8 @@ using App1.Views;
 
 using Xamarin.Forms;
 using System.Collections.Generic;
+using App1.Droid;
+using WizardTricks.SorcererSupreme;
 
 namespace App1.ViewModels
 {
@@ -19,7 +21,7 @@ namespace App1.ViewModels
         private Random varRandom;
         private NewItemsViewModel newItemsVM;
 
-		public ItemsViewModel()
+        public ItemsViewModel()
 		{
 			Title = "";
 			Items = new ObservableRangeCollection<Item>();
@@ -76,6 +78,10 @@ namespace App1.ViewModels
             }
             foreach (int index in replaceWords)
             {
+#if __ANDROID__
+                Anim test = new Anim();
+                test.startAnimation();
+#endif
                 int newWord = varRandom.Next(0, 20);
                 Items.RemoveAt(index);
                 Items.Insert(index, newItemsVM.WordList[newWord]);

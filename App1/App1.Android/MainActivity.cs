@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Widget;
 using WizardTricks.SorcererSupreme;
 
 namespace App1.Droid
@@ -12,6 +13,8 @@ namespace App1.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            SetContentView(Resource.Layout.anim);
 
             base.OnCreate(bundle);
 
